@@ -6,7 +6,7 @@ interface MainContentProps {
 
 export default function MainContent({ children }: MainContentProps) {
   return (
-    <main className="flex-grow">
+    <main className="flex-grow pt-16">
       {children}
     </main>
   );

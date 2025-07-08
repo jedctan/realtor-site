@@ -70,16 +70,15 @@ export default function ListingsPage() {
   ];
 
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
+      <section className="bg-gradient-to-r from-[#213555] to-[#3E5879] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-4">Property Listings</h1>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-white mb-8">
               Browse featured properties with Carmela Flores-Tan, your trusted local realtor.
             </p>
-            
             {/* Search/Filter Bar */}
             <div className="max-w-4xl mx-auto">
               <div className="bg-white rounded-lg p-4 shadow-lg">
@@ -87,23 +86,23 @@ export default function ListingsPage() {
                   <input
                     type="text"
                     placeholder="Location"
-                    className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
+                    className="px-4 py-2 border border-[#D8C4B6] rounded-md focus:outline-none focus:ring-2 focus:ring-[#213555] text-[#213555]"
                   />
-                  <select className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900">
+                  <select className="px-4 py-2 border border-[#D8C4B6] rounded-md focus:outline-none focus:ring-2 focus:ring-[#213555] text-[#213555]">
                     <option>Price Range</option>
                     <option>$200k - $400k</option>
                     <option>$400k - $600k</option>
                     <option>$600k - $800k</option>
                     <option>$800k+</option>
                   </select>
-                  <select className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900">
+                  <select className="px-4 py-2 border border-[#D8C4B6] rounded-md focus:outline-none focus:ring-2 focus:ring-[#213555] text-[#213555]">
                     <option>Bedrooms</option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4+</option>
                   </select>
-                  <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-md transition-colors duration-200">
+                  <button className="bg-[#213555] hover:bg-[#3E5879] text-white font-semibold py-2 px-6 rounded-md transition-colors duration-200">
                     Search
                   </button>
                 </div>
@@ -117,14 +116,14 @@ export default function ListingsPage() {
       <section className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-2xl font-bold text-gray-900">
+            <h2 className="text-2xl font-bold text-[#213555]">
               Available Properties ({properties.length})
             </h2>
             <div className="flex gap-2">
-              <button className="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors duration-200">
+              <button className="px-4 py-2 border border-[#D8C4B6] rounded-md hover:bg-[#D8C4B6] transition-colors duration-200 text-[#213555]">
                 Grid View
               </button>
-              <button className="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors duration-200">
+              <button className="px-4 py-2 border border-[#D8C4B6] rounded-md hover:bg-[#D8C4B6] transition-colors duration-200 text-[#213555]">
                 List View
               </button>
             </div>
@@ -140,20 +139,20 @@ export default function ListingsPage() {
                     className="w-full h-48 object-cover"
                   />
                   {property.featured && (
-                    <div className="absolute top-4 left-4 bg-yellow-500 text-white px-2 py-1 rounded-md text-sm font-semibold">
+                    <div className="absolute top-4 left-4 bg-[#D8C4B6] text-[#213555] px-2 py-1 rounded-md text-sm font-semibold">
                       Featured
                     </div>
                   )}
-                  <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-md text-sm font-semibold">
+                  <div className="absolute top-4 right-4 bg-[#213555] text-white px-3 py-1 rounded-md text-sm font-semibold">
                     {property.price}
                   </div>
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-xl font-semibold text-[#213555] mb-2">
                     {property.title}
                   </h3>
-                  <p className="text-gray-600 mb-4 flex items-center">
+                  <p className="text-[#213555] mb-4 flex items-center">
                     <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -161,13 +160,13 @@ export default function ListingsPage() {
                     {property.location}
                   </p>
                   
-                  <div className="flex justify-between text-sm text-gray-500 mb-4">
+                  <div className="flex justify-between text-sm text-[#213555] mb-4">
                     <span>{property.bedrooms} beds</span>
                     <span>{property.bathrooms} baths</span>
                     <span>{property.sqft.toLocaleString()} sqft</span>
                   </div>
                   
-                  <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors duration-200">
+                  <button className="w-full bg-[#213555] hover:bg-[#3E5879] text-white font-semibold py-2 px-4 rounded-md transition-colors duration-200">
                     View Details
                   </button>
                 </div>
@@ -177,7 +176,7 @@ export default function ListingsPage() {
 
           {/* Load More Button */}
           <div className="text-center mt-12">
-            <button className="bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 font-semibold py-3 px-8 rounded-md transition-colors duration-200">
+            <button className="bg-white border border-[#D8C4B6] text-[#213555] hover:bg-[#D8C4B6] font-semibold py-3 px-8 rounded-md transition-colors duration-200">
               Load More Properties
             </button>
           </div>
