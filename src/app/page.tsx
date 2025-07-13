@@ -9,7 +9,7 @@ export default function Home() {
         <div className="relative w-full h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px]">
           <Image
             src="/home-pic.jpg"
-            alt="Carmela Flores-Tan - Home Hero"
+            alt="Soraya Flores-Tan - Home Hero"
             fill
             priority
             style={{ objectFit: "cover", objectPosition: "center bottom" }}

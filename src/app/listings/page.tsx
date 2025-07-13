@@ -77,7 +77,7 @@ export default function ListingsPage() {
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-4">Property Listings</h1>
             <p className="text-xl text-white mb-8">
-              Browse featured properties with Carmela Flores-Tan, your trusted local realtor.
+              Browse featured properties with Soraya Flores-Tan, your trusted local realtor.
             </p>
             {/* Search/Filter Bar */}
             <div className="max-w-4xl mx-auto">

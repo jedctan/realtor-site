@@ -32,7 +32,7 @@ export default function Navbar() {
                 isScrolled ? 'text-white' : 'text-[#213555]'
               }`}
             >
-              Carmela Flores-Tan
+              Soraya Flores-Tan
             </Link>
           </div>
           

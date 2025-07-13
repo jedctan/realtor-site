@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Carmela Flores-Tan</h3>
+            <h3 className="text-lg font-semibold mb-4 text-white">Soraya Flores-Tan</h3>
             <p className="text-white text-sm">
               Your trusted partner in real estate. I help you find your dream home or sell your property with confidence.
             </p>
@@ -55,7 +55,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t border-[#3E5879] mt-8 pt-8 text-center">
           <p className="text-sm text-white">
-            © 2024 Carmela Flores-Tan. All rights reserved.
+            © 2024 Soraya Flores-Tan. All rights reserved.
           </p>
         </div>
       </div>

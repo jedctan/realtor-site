@@ -11,8 +11,8 @@ const zillaSlab = Zilla_Slab({
 });
 
 export const metadata: Metadata = {
-  title: "Carmela Flores-Tan | Realtor",
-  description: "Carmela Flores-Tan is your trusted real estate partner. Find your dream home or sell your property with confidence in the local market.",
+  title: "Soraya Flores-Tan | Realtor",
+  description: "Soraya Flores-Tan is your trusted real estate partner. Find your dream home or sell your property with confidence in the local market.",
 };
 
 export default function RootLayout({
