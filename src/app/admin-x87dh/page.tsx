@@ -19,7 +19,7 @@ export default function AdminPage() {
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
-    // Check if user is returning from magic link
+    // Handle sign-in from magic link
     if (isSignInWithEmailLink(auth, window.location.href)) {
       const email = localStorage.getItem('emailForSignIn');
       if (email) {
@@ -32,19 +32,31 @@ export default function AdminPage() {
           .catch((error) => {
             setMessage(`Error signing in: ${error.message}`);
           })
-          .finally(() => {
-            setIsLoading(false);
-          });
+          .finally(() => setIsLoading(false));
       }
     }
 
-    // Listen for auth state changes
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
       setUser(user);
+
       if (user) {
-        // Check if user is admin
-        const adminEmail = process.env.NEXT_PUBLIC_ADMIN_EMAIL;
-        setIsAdmin(user.email === adminEmail);
+        // Send token to server to verify admin status
+        const token = await user.getIdToken();
+        try {
+          const res = await fetch('/api/verify-admin', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ token }),
+          });
+
+          const data = await res.json();
+          setIsAdmin(data.isAdmin);
+        } catch (err) {
+          console.error('Admin verification failed:', err);
+          setIsAdmin(false);
+        }
       } else {
         setIsAdmin(false);
       }
@@ -62,7 +74,7 @@ export default function AdminPage() {
 
     try {
       const actionCodeSettings = {
-        url: window.location.href,
+        url: process.env.NEXT_PUBLIC_MAGIC_LINK_REDIRECT_URL || window.location.origin,
         handleCodeInApp: true,
       };
 
