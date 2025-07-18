@@ -14,10 +14,6 @@ export async function POST(req: NextRequest) {
   try {
     const { token } = await req.json();
     const decodedToken = await getAuth().verifyIdToken(token);
-
-    console.log('🔥 Firebase decodedToken.email:', decodedToken.email);
-    console.log('🧱 ADMIN_EMAIL:', process.env.ADMIN_EMAIL);
-
     const isAdmin = decodedToken.email === process.env.ADMIN_EMAIL;
     return NextResponse.json({ isAdmin });
   } catch (error) {
