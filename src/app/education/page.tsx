@@ -8,7 +8,7 @@ export default function EducationPage() {
             Empowering you with knowledge for every step of your real estate journey.
           </p>
           <p className="text-lg text-white mb-8">
-            As a dedicated realtor, I believe that informed clients make the best decisions. Here you'll find resources, tips, and guides to help you understand the buying, selling, and investing process. Whether you're a first-time homebuyer or a seasoned investor, my goal is to provide you with the education you need to succeed in the real estate market.
+            As a dedicated realtor, I believe that informed clients make the best decisions. Here you&apos;ll find resources, tips, and guides to help you understand the buying, selling, and investing process. Whether you&apos;re a first-time homebuyer or a seasoned investor, my goal is to provide you with the education you need to succeed in the real estate market.
           </p>
         </div>
       </section>

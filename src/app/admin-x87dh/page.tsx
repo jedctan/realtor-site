@@ -10,7 +10,7 @@ import {
   signOut,
   User
 } from 'firebase/auth';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { collection, addDoc, serverTimestamp, FieldValue, Timestamp } from 'firebase/firestore';
 
 interface Listing {
   title: string;
@@ -25,7 +25,7 @@ interface Listing {
   squareFootage: number;
   propertyType: string;
   status: string;
-  listingDate: any;
+  listingDate: Timestamp | FieldValue | null;
   mlsLink: string;
   features: string[];
 }
@@ -120,8 +120,9 @@ export default function AdminPage() {
       localStorage.setItem('emailForSignIn', email);
       setMessage('Check your email for the sign-in link!');
       setEmail('');
-    } catch (error: any) {
-      setMessage(`Error sending email: ${error.message}`);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      setMessage(`Error sending email: ${message}`);
     } finally {
       setIsLoading(false);
     }
@@ -131,8 +132,9 @@ export default function AdminPage() {
     try {
       await signOut(auth);
       setMessage('Signed out successfully');
-    } catch (error: any) {
-      setMessage(`Error signing out: ${error.message}`);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      setMessage(`Error signing out: ${message}`);
     }
   };
 
@@ -170,8 +172,9 @@ export default function AdminPage() {
         mlsLink: '',
         features: []
       });
-    } catch (error: any) {
-      setMessage(`Error adding listing: ${error.message}`);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      setMessage(`Error adding listing: ${message}`);
     } finally {
       setIsSubmittingListing(false);
     }
@@ -252,7 +255,7 @@ export default function AdminPage() {
         <div className="max-w-md w-full bg-white rounded-lg shadow-md p-8 text-center">
           <h1 className="text-2xl font-bold text-red-600 mb-4">Unauthorized Access</h1>
           <p className="text-gray-600 mb-6">
-            You don't have permission to access this admin area.
+            You don&apos;t have permission to access this admin area.
           </p>
           <button
             onClick={handleSignOut}
